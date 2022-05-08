@@ -1,0 +1,39 @@
+{
+  "name": "slidev-theme-parallel-text",
+  "version": "0.0.0",
+  "keywords": [
+    "slidev-theme",
+    "slidev"
+  ],
+  "scripts": {
+    "build": "slidev build presentation.md",
+    "dev": "slidev presentation.md --open",
+    "export": "slidev export presentation.md",
+    "screenshot": "slidev export presentation.md --format png"
+  },
+  "dependencies": {
+    "@slidev/types": "^0.31.2",
+    "codemirror-theme-vars": "^0.1.1",
+    "prism-theme-vars": "^0.2.2",
+    "theme-vitesse": "^0.4.9"
+  },
+  "devDependencies": {
+    "@slidev/cli": "^0.31.2"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "slidev": ">=0.19.3"
+  },
+  "//": "Learn more: https://sli.dev/themes/write-a-theme.html",
+  "slidev": {
+    "colorSchema": "both",
+    "highlighter": "all",
+    "defaults": {
+      "fonts": {
+        "sans": "Noto Sans Japanese",
+        "mono": "JetBrains Mono"
+      },
+      "hightlighter": "prism"
+    }
+  }
+}

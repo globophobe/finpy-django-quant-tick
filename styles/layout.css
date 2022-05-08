@@ -1,0 +1,115 @@
+:root {
+  // default theme color
+  // can be overrided by uses `themeConfig` option
+  --slidev-theme-primary: #5d8392;
+}
+
+.slidev-layout {
+  padding: 1rem;
+  font-weight: bold;
+
+  h1 {
+    @apply text-5xl;
+    line-height: 1.2 !important;
+  }
+
+  p {
+    line-height: 1.4 !important;
+  }
+
+  h1 + p {
+    @apply mt-4 opacity-85 text-4xl;
+  }
+
+  img.inline,
+  p.ellipsis {
+    display: inline-block;
+    vertical-align: bottom;
+  }
+
+  p.ellipsis {
+    margin-bottom: -1.25rem;
+  }
+
+  ol {
+    @apply text-3xl;
+  }
+
+  ol > li > ul > li {
+    @apply opacity-80;
+  }
+
+  code {
+    line-height: 1.8;
+  }
+
+  code.inline {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  code:before {
+    content: "";
+  }
+
+  code:after {
+    content: "";
+  }
+}
+
+.slidev-layout.cover {
+  h1 {
+    @apply text-6xl;
+  }
+
+  p {
+    @apply mt-4 opacity-85 text-5xl;
+  }
+
+  p.arrow {
+    @apply mt-6 text-3xl;
+  }
+}
+
+.slidev-layout.image-right,
+.slidev-layout.image.left {
+  .image-right,
+  .image-left {
+    padding: 1rem;
+  }
+
+  .image-right {
+    padding-left: 0;
+  }
+
+  .image-left {
+    padding-right: 0;
+  }
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #26466d !important;
+  border: 0px none;
+  text-decoration: underline;
+}
+
+.border-radius {
+  border-radius: 1rem;
+}
+
+.blue {
+  color: #26466d;
+}
+
+.red {
+  color: #6d2a26;
+}
+
+.highlight {
+  background-color: #ffffe0;
+  @apply opacity-75;
+  line-height: 1.8;
+}
