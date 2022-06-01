@@ -146,16 +146,42 @@ Pradoさんによると、時間ベースを避ける理由：
 しきい値に達するとローソク足を作成されます。
 
 ---
-
-# For example, tick bars might create a new bar every 1000 transactions...
-
-たとえば、ティックのローソク足だと、1000トランザクション毎に、
-
+layout: code
+text: For example, tick bars might create a new bar every 1000 transactions...
+trans: たとえば、ティックのローソク足だと、1000トランザクション毎に、
 ---
 
-# And, dollar bars might create a new bar every $1,000,000
+<table>
+  <tr>
+    <td>998</td>
+    <td>999</td>
+    <td>1000</td>
+  </tr>
+  <tr>
+    <td>...</td>
+    <td>...</td>
+    <td>Tick bar</td>
+  </tr>
+</table>
 
-そして、ドルのローソク足は1,000,000ドル毎に作成されます。
+---
+layout: code
+text: And, dollar bars might create a new bar every &dollar;1,000,000
+trans: そして、ドルのローソク足は1,000,000ドル毎に作成されます。
+---
+
+<table>
+  <tr>
+    <td>$999,998</td>
+    <td>$999,999</td>
+    <td>$1,000,000</td>
+  </tr>
+  <tr>
+    <td>...</td>
+    <td>...</td>
+    <td>Dollar bar</td>
+  </tr>
+</table>
 
 ---
 
@@ -338,19 +364,25 @@ trans: 基本仮定：
 
 # Another caveat, S3 and GCS storage operations at 1 minute intervals can become expensive.
 
+ストレージについて、もう一点、１分毎にデータを保存すると、S3とGCSのコストが高くなります。
 
 ---
 
 # Whenever possible, <a style="text-decoration: none;" href="https://github.com/globophobe/django-cryptofeed-werks">django-cryptofeed-werks</a> partitions data at 1 hour intervals.
 
+出来るだけ、 <a style="text-decoration: none;" href="https://github.com/globophobe/django-cryptofeed-werks">django-cryptofeed-werks</a>は1時間毎にデータを保存します。
 
 ---
 
-# An hour is ideal as a parition of that size can typically be downloaded, aggregated, validated and saved within a few minutes.
+# An hour of data can typically be downloaded, aggregated, validated, and saved within minutes or seconds.
+
+一時間分は通常に数分または数秒以内にダウンロード、集約、検証、そして保存が出来ます。
 
 ---
 
 # <a style="text-decoration: none;" href="https://github.com/globophobe/django-cryptofeed-werks">django-cryptofeed-werks</a> is intended for serverless deployment. The demo deploys to GCP Cloud Run, with GCP Cloud Scheduler for periodic execution.
+
+サーバーレスデプロイは想定です。デモはGCP Cloud Runにデプロイされています。定期的に実行のために、GCP Cloud Schedulerを利用されます。
 
 ---
 
@@ -363,6 +395,46 @@ trans: 基本仮定：
 # They can be generated much faster by aggregating and filtering the data beforehand.
 
 前もってデータを集約されてフィルタリングでデータの量を縮小すると、より早く作成をするのが可能になります。
+
+---
+
+# One might think that dollar bars created from raw ticks rather than aggregated data would be be more precise.
+
+ドルベースのローソク足は集約されているデータで作成するよりも集約されていないデータで作成するのは正確だと思ってしまうかも知りませんけど、
+
+---
+layout: code
+text: However, the final transaction frequently exceeds the threshold.
+trans: 一番最後の取引はしばしばしきい値を超えます。
+---
+
+<table>
+  <tr>
+    <td>$999,998</td>
+    <td>$999,999</td>
+    <td>$1,099,999</td>
+  </tr>
+  <tr>
+    <td>...</td>
+    <td>...</td>
+    <td>Dollar bar<br />
+      <ul style="font-size: 0.75rem;">
+        <li>Threshold is $1,000,000
+          <ul style="list-style-type: circle;"><li>しきい値は$1,000,000です</li></ul>
+        </li>
+        <li>Final transaction was $100,000
+          <ul style="list-style-type: circle;"><li>最後の取引は$100,000でした</li></ul>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+---
+
+# For tick bars, raw ticks are absolutely better, and can be created by looping, for example in steps of 1000.
+
+ティックのローソク足の場合、集約されていないデータは一番いいです。たとえば1000ステップでループする事で簡単に作成が出来ます。
 
 ---
 
@@ -430,7 +502,7 @@ trans: ちょっと狂っているAPI仕様も存在すると思います。
 
 ---
 layout: code
-text: An extremely ugly but effective solution, adjusting nanoseconds&#58;
+text: An extremely ugly but effective solution, adjusting microseconds&#58;
 trans: その解決とは：
 ---
 
