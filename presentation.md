@@ -2,7 +2,7 @@
 theme: ./
 ---
 
-# Django Cryptofeed Werks
+# Django Quant Werks
 
 個人プロジェクトの紹介
 
@@ -225,15 +225,15 @@ trans: 解決
 
 ---
 
-# To resolve those challenges, I developed <a style="text-decoration: none;" href="https://github.com/globophobe/django-cryptofeed-werks">Django Cryptofeed Werks</a>.
+# To resolve those challenges, I developed <a style="text-decoration: none;" href="https://github.com/globophobe/django-quant-werks">Django Quant Werks</a>.
 
-課題を解決するために、<a style="text-decoration: none;" href="https://github.com/globophobe/django-cryptofeed-werks">Django Cryptofeed Werks</a>を開発しました。
+課題を解決するために、<a style="text-decoration: none;" href="https://github.com/globophobe/django-quant-werks">Django Quant Werks</a>を開発しました。
 
 ---
 
-# <a style="text-decoration: none;" href="https://github.com/globophobe/django-cryptofeed-werks">django-cryptofeed-werks</a> aggregates candlesticks with tick data from financial exchanges. 
+# <a style="text-decoration: none;" href="https://github.com/globophobe/django-quant-werks">django-quant-werks</a> aggregates candlesticks with tick data from financial exchanges. 
 
-<a style="text-decoration: none;" href="https://github.com/globophobe/django-cryptofeed-werks">django-cryptofeed-werks</a>は取引所のデータを集約してローソク足を作成されます。 
+<a style="text-decoration: none;" href="https://github.com/globophobe/django-quant-werks">django-quant-werks</a>は取引所のデータを集約してローソク足を作成されます。 
 
 ---
 
@@ -301,9 +301,9 @@ trans: 一番最初の例データポイントは２番めと結合されます�
 
 ---
 
-# Regardless of `min_volume`, <br /><a style="text-decoration: none;" href="https://github.com/globophobe/django-cryptofeed-werks">django-cryptofeed-werks</a> also aggregates the final data point of each minute, so that 1 minute time based candlesticks can also be derived.
+# Regardless of `min_volume`, <br /><a style="text-decoration: none;" href="https://github.com/globophobe/django-quant-werks">django-quant-werks</a> also aggregates the final data point of each minute, so that 1 minute time based candlesticks can also be derived.
 
-`min_volume`は関係なく、<br /><a style="text-decoration: none;" href="https://github.com/globophobe/django-cryptofeed-werks">django-cryptofeed-werks</a>が各分の最終データポイントも集約するため、1分の時間ベースのローソク足も導出できます。
+`min_volume`は関係なく、<br /><a style="text-decoration: none;" href="https://github.com/globophobe/django-quant-werks">django-quant-werks</a>が各分の最終データポイントも集約するため、1分の時間ベースのローソク足も導出できます。
 
 ---
 layout: code
@@ -330,7 +330,7 @@ trans: その場合、関連がある値は <code>None</code> になります。
 
 ---
 layout: code
-text: django-cryptofeed-werks assumes&#58;
+text: django-quant-werks assumes&#58;
 trans: 基本仮定：
 
 ---
@@ -344,15 +344,15 @@ trans: 基本仮定：
 
 ---
 
-# One caveat, as described in the [notes](https://github.com/globophobe/django-cryptofeed-werks/blob/main/NOTES.md), data quality is a priority. More so than storage costs.
+# One caveat, as described in the [notes](https://github.com/globophobe/django-quant-werks/blob/main/NOTES.md), data quality is a priority. More so than storage costs.
 
-ストレージについて、[書いてあります](https://github.com/globophobe/django-cryptofeed-werks/blob/main/NOTES.md)けど、ストレージコストよりもデータ品質が優先です。
+ストレージについて、[書いてあります](https://github.com/globophobe/django-quant-werks/blob/main/NOTES.md)けど、ストレージコストよりもデータ品質が優先です。
 
 ---
 
-# The minimum time interval that <a style="text-decoration: none;" href="https://github.com/globophobe/django-cryptofeed-werks">django-cryptofeed-werks</a> collects data is 1 minute.
+# The minimum time interval that <a style="text-decoration: none;" href="https://github.com/globophobe/django-quant-werks">django-quant-werks</a> collects data is 1 minute.
 
-<a style="text-decoration: none;" href="https://github.com/globophobe/django-cryptofeed-werks">django-cryptofeed-werks</a>はデータ収集の最低限の時間間隔は1分です。
+<a style="text-decoration: none;" href="https://github.com/globophobe/django-quant-werks">django-quant-werks</a>はデータ収集の最低限の時間間隔は1分です。
 
 ---
 
@@ -368,9 +368,9 @@ trans: 基本仮定：
 
 ---
 
-# Whenever possible, <a style="text-decoration: none;" href="https://github.com/globophobe/django-cryptofeed-werks">django-cryptofeed-werks</a> partitions data at 1 hour intervals.
+# Whenever possible, <a style="text-decoration: none;" href="https://github.com/globophobe/django-quant-werks">django-quant-werks</a> partitions data at 1 hour intervals.
 
-出来るだけ、 <a style="text-decoration: none;" href="https://github.com/globophobe/django-cryptofeed-werks">django-cryptofeed-werks</a>は1時間毎にデータを保存します。
+出来るだけ、 <a style="text-decoration: none;" href="https://github.com/globophobe/django-quant-werks">django-quant-werks</a>は1時間毎にデータを保存します。
 
 ---
 
@@ -380,7 +380,7 @@ trans: 基本仮定：
 
 ---
 
-# <a style="text-decoration: none;" href="https://github.com/globophobe/django-cryptofeed-werks">django-cryptofeed-werks</a> is intended for serverless deployment. The demo deploys to GCP Cloud Run, with GCP Cloud Scheduler for periodic execution.
+# <a style="text-decoration: none;" href="https://github.com/globophobe/django-quant-werks">django-quant-werks</a> is intended for serverless deployment. The demo deploys to GCP Cloud Run, with GCP Cloud Scheduler for periodic execution.
 
 サーバーレスデプロイは想定です。デモはGCP Cloud Runにデプロイされています。定期的に実行のために、GCP Cloud Schedulerを利用されます。
 
@@ -450,9 +450,9 @@ trans: 一番最後の取引はしばしばしきい値を超えます。
 
 ---
 
-# So, I created django-cryptofeed-werks.
+# So, I created django-quant-werks.
 
-なんので、django-cryptofeed-werks<br />の開発を始まりました。
+なんので、django-quant-werks<br />の開発を始まりました。
 
 ---
 
