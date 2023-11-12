@@ -1,5 +1,5 @@
-# finpy-django-quant-candles 
+# finpy-django-quant-tick 
 
 Slides for a lightning talk:
 
-https://finpy-django-quant-candles.netlify.app
+https://finpy-django-quant-tick.netlify.app
