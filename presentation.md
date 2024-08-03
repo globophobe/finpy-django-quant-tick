@@ -254,9 +254,9 @@ trans: ２番目のデータポイントは４つの取引から集約されま�
 
 ---
 
-# As described in the accompanying project <a style="text-decoration: none;" href="https://github.com/globophobe/cryptofeed-werks">cryptofeed-werks</a>, aggregating trades in this way can increase information, as they are either orders of size or stop loss cascades.
+# As described in the accompanying project <a style="text-decoration: none;" href="https://github.com/globophobe/asyncio-quant-tick">asyncio-quant-tick</a>, aggregating trades in this way can increase information, as they are either orders of size or stop loss cascades.
 
-付随するプロジェクト<a style="text-decoration: none;" href="https://github.com/globophobe/cryptofeed-werks">cryptofeed-werks</a>で説明通り、このようにデータを集約されると、データに成行注文とストップロスカスケードの影響が反映されます。
+付随するプロジェクト<a style="text-decoration: none;" href="https://github.com/globophobe/asyncio-quant-tick">asyncio-quant-tick</a>で説明通り、このようにデータを集約されると、データに成行注文とストップロスカスケードの影響が反映されます。
 
 ---
 
